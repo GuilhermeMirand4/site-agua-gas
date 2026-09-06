@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ store.nome }} — {{ store.slogan }}</title>
+  <meta name="description" content="{{ store.nome }}: {{ store.slogan }}. Peça pelo WhatsApp e receba em casa.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="#topo" class="brand">
+        <svg class="brand-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M20 4C20 4 9 17.5 9 25.5C9 31.85 13.925 36 20 36C26.075 36 31 31.85 31 25.5C31 17.5 20 4 20 4Z" stroke="#0E5C73" stroke-width="2.5"/>
+        </svg>
+        <span class="brand-name">{{ store.nome }}</span>
+      </a>
+      <div class="header-actions">
+        <a class="header-phone" href="tel:+{{ store.whatsapp_numero }}">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.36 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span class="header-phone-text">{{ store.telefone_exibicao }}</span>
+        </a>
+        <a class="btn btn-whatsapp" href="{{ whatsapp_link }}" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.71 4.6 1.929 6.457L4 29l7.73-1.887A11.94 11.94 0 0 0 16.001 27C22.629 27 28 21.627 28 15S22.629 3 16.001 3zm6.955 17.14c-.29.815-1.44 1.5-2.35 1.69-.63.13-1.45.235-4.21-.9-3.53-1.46-5.8-5.03-5.98-5.27-.175-.24-1.43-1.9-1.43-3.63 0-1.73.905-2.575 1.225-2.93.32-.355.7-.445.935-.445.235 0 .47.002.675.012.216.01.505-.082.79.6.29.7.985 2.43 1.07 2.605.085.175.14.38.03.62-.11.24-.165.39-.325.6-.16.21-.34.47-.485.63-.16.175-.325.365-.14.715.185.35.82 1.35 1.76 2.19 1.21 1.08 2.23 1.415 2.58 1.575.35.16.555.135.76-.08.205-.215.875-1.02 1.11-1.37.235-.35.47-.29.79-.175.32.115 2.05.965 2.4 1.14.35.175.585.26.67.405.085.145.085.84-.205 1.655z"/></svg>
+          Pedir no WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="topo">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">Água mineral e gás de cozinha</p>
+          <h1>{{ store.slogan }}</h1>
+          <p class="hero-sub">{{ store.area_entrega }}. Faça seu pedido pelo WhatsApp em poucos toques — sem precisar ligar ou digitar tudo do zero.</p>
+          <div class="hero-actions">
+            <a class="btn btn-whatsapp" href="{{ whatsapp_link }}" target="_blank" rel="noopener">
+              <svg class="icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.71 4.6 1.929 6.457L4 29l7.73-1.887A11.94 11.94 0 0 0 16.001 27C22.629 27 28 21.627 28 15S22.629 3 16.001 3zm6.955 17.14c-.29.815-1.44 1.5-2.35 1.69-.63.13-1.45.235-4.21-.9-3.53-1.46-5.8-5.03-5.98-5.27-.175-.24-1.43-1.9-1.43-3.63 0-1.73.905-2.575 1.225-2.93.32-.355.7-.445.935-.445.235 0 .47.002.675.012.216.01.505-.082.79.6.29.7.985 2.43 1.07 2.605.085.175.14.38.03.62-.11.24-.165.39-.325.6-.16.21-.34.47-.485.63-.16.175-.325.365-.14.715.185.35.82 1.35 1.76 2.19 1.21 1.08 2.23 1.415 2.58 1.575.35.16.555.135.76-.08.205-.215.875-1.02 1.11-1.37.235-.35.47-.29.79-.175.32.115 2.05.965 2.4 1.14.35.175.585.26.67.405.085.145.085.84-.205 1.655z"/></svg>
+              Fazer pedido agora
+            </a>
+            <a class="btn btn-outline" href="#produtos">Ver produtos e preços</a>
+          </div>
+        </div>
+
+        <aside class="facts-panel" aria-label="Informações rápidas">
+          <dl>
+            <div class="facts-row">
+              <dt>Tempo de entrega</dt>
+              <dd>{{ store.tempo_entrega_curto }}</dd>
+            </div>
+            <div class="facts-row">
+              <dt>Área atendida</dt>
+              <dd>{{ store.area_entrega_curta }}</dd>
+            </div>
+            <div class="facts-row">
+              <dt>Funcionamento</dt>
+              <dd>{{ store.horario[0][1] }}</dd>
+            </div>
+            <div class="facts-row">
+              <dt>Pagamento</dt>
+              <dd>{{ store.pagamentos | join(', ') }}</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PRODUTOS -->
+    <section class="section section-alt" id="produtos">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-num">O que vendemos</span>
+          <h2>Água mineral e gás, com preço claro</h2>
+          <p class="section-lede">Todos os itens incluem entrega na área atendida. Preços podem variar conforme a distância — confirme pelo WhatsApp.</p>
+        </div>
+
+        <div class="produtos-grid">
+          <div class="produto-grupo">
+            <h3>Água mineral</h3>
+            <p class="produto-grupo-sub">Galões e garrafões com lacre de segurança</p>
+            <ul class="produto-lista">
+              {% for item in produtos_agua %}
+              <li class="produto-item">
+                <div>
+                  <div class="produto-item-nome">{{ item.nome }}</div>
+                  <div class="produto-item-detalhe">{{ item.detalhe }}</div>
+                </div>
+                {% if item.preco %}<div class="produto-item-preco">{{ item.preco }}</div>{% endif %}
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+
+          <div class="produto-grupo">
+            <h3>Gás de cozinha</h3>
+            <p class="produto-grupo-sub">Botijões com certificação Inmetro</p>
+            <ul class="produto-lista">
+              {% for item in produtos_gas %}
+              <li class="produto-item">
+                <div>
+                  <div class="produto-item-nome">{{ item.nome }}</div>
+                  <div class="produto-item-detalhe">{{ item.detalhe }}</div>
+                </div>
+                {% if item.preco %}<div class="produto-item-preco">{{ item.preco }}</div>{% endif %}
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO PEDIR -->
+    <section class="section" id="como-pedir">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-num">Como funciona</span>
+          <h2>Peça em três passos</h2>
+        </div>
+        <div class="passos">
+          <div class="passo">
+            <span class="passo-num">1</span>
+            <h3>Toque em "Pedir no WhatsApp"</h3>
+            <p>Uma mensagem já vem pronta — você só completa os campos.</p>
+          </div>
+          <div class="passo">
+            <span class="passo-num">2</span>
+            <h3>Preencha endereço e pagamento</h3>
+            <p>Informe onde entregar, a forma de pagamento e se precisa de troco.</p>
+          </div>
+          <div class="passo">
+            <span class="passo-num">3</span>
+            <h3>Receba em casa</h3>
+            <p>{{ store.tempo_entrega }}, dentro da área atendida.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEGURANÇA -->
+    <section class="section section-alt" id="seguranca">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-num">Segurança em casa</span>
+          <h2>Cuidados com botijão de gás e água mineral</h2>
+          <p class="section-lede">Recomendações básicas para o uso seguro dos produtos que entregamos.</p>
+        </div>
+        <div class="seguranca-grid">
+          <div class="seguranca-painel">
+            <h3>Botijão de gás</h3>
+            <ul>
+              {% for dica in dicas_gas %}
+              <li>{{ dica }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="seguranca-painel agua">
+            <h3>Água mineral</h3>
+            <ul>
+              {% for dica in dicas_agua %}
+              <li>{{ dica }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCALIZAÇÃO -->
+    <section class="section" id="local">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-num">Onde estamos</span>
+          <h2>Endereço e horário de funcionamento</h2>
+        </div>
+        <div class="local-grid">
+          <div class="local-info">
+            <h3>Endereço</h3>
+            <p class="local-endereco">
+              {{ store.endereco_linha1 }}<br>
+              {{ store.endereco_linha2 }}<br>
+              CEP {{ store.endereco_cep }}
+            </p>
+
+            <h3>Horário</h3>
+            <dl class="horario-lista">
+              {% for dia, hora in store.horario %}
+              <div class="horario-item">
+                <dt>{{ dia }}</dt>
+                <dd>{{ hora }}</dd>
+              </div>
+              {% endfor %}
+            </dl>
+
+            <a class="btn btn-call" href="{{ store.maps_link_url }}" target="_blank" rel="noopener">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Como chegar
+            </a>
+          </div>
+          <iframe class="map-frame" src="{{ store.maps_embed_url }}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de localização da loja"></iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>{{ store.nome }}</h4>
+          <p>{{ store.slogan }}</p>
+        </div>
+        <div>
+          <h4>Contato</h4>
+          <p><a href="tel:+{{ store.whatsapp_numero }}">{{ store.telefone_exibicao }}</a></p>
+          {% if store.telefone_fixo %}<p>{{ store.telefone_fixo }}</p>{% endif %}
+          <p><a href="{{ whatsapp_link }}" target="_blank" rel="noopener">WhatsApp</a></p>
+        </div>
+        <div>
+          <h4>Endereço</h4>
+          <p>{{ store.endereco_linha1 }}<br>{{ store.endereco_linha2 }}</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; {{ ano_atual }} {{ store.nome }}. Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="{{ whatsapp_link }}" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">
+    <svg class="icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.71 4.6 1.929 6.457L4 29l7.73-1.887A11.94 11.94 0 0 0 16.001 27C22.629 27 28 21.627 28 15S22.629 3 16.001 3zm6.955 17.14c-.29.815-1.44 1.5-2.35 1.69-.63.13-1.45.235-4.21-.9-3.53-1.46-5.8-5.03-5.98-5.27-.175-.24-1.43-1.9-1.43-3.63 0-1.73.905-2.575 1.225-2.93.32-.355.7-.445.935-.445.235 0 .47.002.675.012.216.01.505-.082.79.6.29.7.985 2.43 1.07 2.605.085.175.14.38.03.62-.11.24-.165.39-.325.6-.16.21-.34.47-.485.63-.16.175-.325.365-.14.715.185.35.82 1.35 1.76 2.19 1.21 1.08 2.23 1.415 2.58 1.575.35.16.555.135.76-.08.205-.215.875-1.02 1.11-1.37.235-.35.47-.29.79-.175.32.115 2.05.965 2.4 1.14.35.175.585.26.67.405.085.145.085.84-.205 1.655z"/></svg>
+    <span class="whatsapp-float-text">Fazer pedido</span>
+  </a>
+
+</body>
+</html>
